@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<PackageId>DpdShipper</PackageId>
+	<PackageId>DpdShipper.Api</PackageId>
 	<Version>1.0.1</Version>
 	<Authors>Soneritics</Authors>
 	<Description></Description>
