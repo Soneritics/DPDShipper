@@ -1,13 +1,7 @@
 ﻿using DpdShipper.Api.Domain.Shipment.Request;
-using DpdShipper.Api.Domain.Shipment.Response;
 using ShipmentService;
 
 namespace DpdShipper.Api.Business;
-
-public interface IMapper<TFrom, TTo, TExtraMappingData>
-{
-    TTo Map(TFrom from, TExtraMappingData? extraMappingData);
-}
 
 public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>, string>
 {
@@ -67,13 +61,5 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
         }
 
         return result;
-    }
-}
-
-public class ShipmentResultMapper : IMapper<storeOrdersResponse?, ShipmentResponse, byte[]>
-{
-    public ShipmentResponse Map(storeOrdersResponse? from, byte[]? extraMappingData)
-    {
-        throw new NotImplementedException();
     }
 }

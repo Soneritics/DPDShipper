@@ -8,5 +8,5 @@ public interface IShipmentService
 {
     AuthToken AuthToken { get; set; }
 
-    Task<ShipmentResponse> GetPdfAsync(IEnumerable<Label> labels, PaperFormats paperFormat);
+    Task<ShipmentResults> GetPdfAsync(IEnumerable<Label> labels, PaperFormats paperFormat);
 }

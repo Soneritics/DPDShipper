@@ -12,7 +12,7 @@ public class ShipmentService : IShipmentService
 {
     private readonly IEndpoints _endpoints;
     private readonly IMapper<IEnumerable<Label>, IEnumerable<order>, string> _labelToOrderMapper;
-    private readonly IMapper<storeOrdersResponse?, ShipmentResponse, byte[]> _shipmentResultMapper;
+    private readonly IMapper<storeOrdersResponse?, ShipmentResults, byte[]> _shipmentResultMapper;
 
     public AuthToken AuthToken { get; set; }
 
@@ -20,7 +20,7 @@ public class ShipmentService : IShipmentService
         IEndpoints endpoints,
         AuthToken authToken,
         IMapper<IEnumerable<Label>, IEnumerable<order>, string> labelToOrderMapper,
-        IMapper<storeOrdersResponse?, ShipmentResponse, byte[]> shipmentResultMapper)
+        IMapper<storeOrdersResponse?, ShipmentResults, byte[]> shipmentResultMapper)
     {
         _endpoints = endpoints;
         AuthToken = authToken;
@@ -33,7 +33,7 @@ public class ShipmentService : IShipmentService
     {
     }
 
-    public async Task<ShipmentResponse> GetPdfAsync(IEnumerable<Label> labels, PaperFormats paperFormat)
+    public async Task<ShipmentResults> GetPdfAsync(IEnumerable<Label> labels, PaperFormats paperFormat)
     {
         var response = await GetResponseAsync(labels, paperFormat, PrintTypes.Pdf);
         return _shipmentResultMapper.Map(response, response?.orderResult?.parcellabelsPDF ?? null);

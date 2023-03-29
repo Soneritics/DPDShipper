@@ -1,4 +1,5 @@
-﻿using DpdShipper.Api;
+﻿using System.IO;
+using DpdShipper.Api;
 using DpdShipper.Api.Domain.Shipment.Request;
 
 Console.WriteLine("DPD Shipper API LoginAsync Example\n-----\n");
@@ -14,11 +15,74 @@ Console.WriteLine("\n");
 var shipperApi = new DpdShipperApi(true);
 var authToken = await shipperApi.LoginService.LoginAsync(delisId, password);
 
-var labels = new List<Label>()
+var dummySender = new Sender()
 {
-    // todo: generate random labels
+    Name = "Paleis van Justitie",
+    Street = "Prins Clauslaan",
+    HouseNumber = "60",
+    ZipCode = "2595AJ",
+    City = "Den Haag",
+    CountryCode = "NL"
 };
 
-await shipperApi.ShipmentService(authToken).GetPdfAsync(labels, PaperFormats.A6);
+var dummyRecipient = new Recipient()
+{
+    Name = "Het Torentje",
+    Street = "Binnenhof",
+    HouseNumber = "17",
+    ZipCode = "2513 AA",
+    City = "Den Haag",
+    CountryCode = "NL",
+    RecipientType = RecipientTypes.Personal
+};
+
+var labels = new List<Label>()
+{
+    new ()
+    {
+        GeneralCustomerReferenceNumber = "SomeReferenceNumber01",
+        Sender = dummySender,
+        Recipient = dummyRecipient,
+        Product = Products.CL,
+        Parcels = new List<Parcel>()
+        {
+            new ()
+            {
+                CustomerReferenceNumber = "ParcelRefNr01",
+                Weight = 20000
+            },
+            new ()
+            {
+                CustomerReferenceNumber = "ParcelRefNr02",
+                Weight = 100
+            }
+        }
+    },
+
+    new ()
+    {
+        GeneralCustomerReferenceNumber = "SomeReferenceNumber02",
+        Sender = dummySender,
+        Recipient = dummyRecipient,
+        Product = Products.CL,
+        Parcels = new List<Parcel>()
+        {
+            new ()
+            {
+                CustomerReferenceNumber = "ParcelRefNr03",
+                Weight = 500
+            }
+        }
+    },
+};
+
+var shipmentResult = await shipperApi
+    .ShipmentService(authToken)
+    .GetPdfAsync(labels, PaperFormats.A6);
+
+await using (var fileStream = File.Create($"file-dpd-{DateTime.Now.ToFileTime()}.pdf")) {
+    await fileStream.WriteAsync(shipmentResult.ResultFile);
+}
+
 
 Console.ReadKey();
