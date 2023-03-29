@@ -22,8 +22,7 @@ jobs:
         run: nuget restore DpdShipper
           
       - name: Build solution and generate NuGet package
-        run: |  
-          dotnet pack DpdShipper/DpdShipper.Api -c Release -o out
+        run: dotnet pack DpdShipper/DpdShipper.Api -c Release -o out
 
       - name: Push generated package to GitHub registry
         run: nuget push out/*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_TOKEN}}
