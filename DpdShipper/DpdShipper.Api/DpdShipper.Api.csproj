@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Endpoints\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DpdShipper.Api.Business\DpdShipper.Api.Business.csproj" />
+    <ProjectReference Include="..\DpdShipper.Api.Domain\DpdShipper.Api.Domain.csproj" />
+    <ProjectReference Include="..\DpdShipper.Api.Soap\DpdShipper.Api.Soap.csproj" />
+  </ItemGroup>
+
+</Project>
