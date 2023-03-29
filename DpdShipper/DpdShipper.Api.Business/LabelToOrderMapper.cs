@@ -13,7 +13,7 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
         {
             var generalShipmentData = new generalShipmentData()
             {
-                mpsCustomerReferenceNumber1 = label.GeneralCustomerReferenceNumber,
+                mpsCustomerReferenceNumber1 = label.ShipmentReferenceNumber,
                 product = label.Product == Products.CL ? "CL" : string.Empty,
                 sendingDepot = extraMappingData ?? string.Empty,
                 sender = new address()
@@ -47,7 +47,7 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
             var parcels = label.Parcels.Select(
                 p => new parcels()
                 {
-                    customerReferenceNumber1 = p.CustomerReferenceNumber,
+                    customerReferenceNumber1 = p.ParcelSpecificReferenceNumber,
                     weight = p.Weight
                 })
                 .ToArray();

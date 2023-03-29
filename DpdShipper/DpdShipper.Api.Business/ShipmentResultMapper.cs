@@ -26,7 +26,7 @@ public class ShipmentResultMapper : IMapper<storeOrdersResponse?, ShipmentResult
             result.ShipmentResultList.Add(
                 new ShipmentResult()
                 {
-                    DpdMpsId = orderResponse.mpsId,
+                    Consignment = orderResponse.mpsId,
                     LabelNumbers = orderResponse.parcelInformation.Select(
                         p => p.parcelLabelNumber),
                     Errors = orderResponse.faults?.Select(

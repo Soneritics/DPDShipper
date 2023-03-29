@@ -40,7 +40,7 @@ var labels = new List<Label>()
 {
     new ()
     {
-        GeneralCustomerReferenceNumber = "SomeReferenceNumber01",
+        ShipmentReferenceNumber = "SomeReferenceNumber01",
         Sender = dummySender,
         Recipient = dummyRecipient,
         Product = Products.CL,
@@ -48,12 +48,12 @@ var labels = new List<Label>()
         {
             new ()
             {
-                CustomerReferenceNumber = "ParcelRefNr01",
+                ParcelSpecificReferenceNumber = "ParcelRefNr01",
                 Weight = 20000
             },
             new ()
             {
-                CustomerReferenceNumber = "ParcelRefNr02",
+                ParcelSpecificReferenceNumber = "ParcelRefNr02",
                 Weight = 100
             }
         }
@@ -61,7 +61,7 @@ var labels = new List<Label>()
 
     new ()
     {
-        GeneralCustomerReferenceNumber = "SomeReferenceNumber02",
+        ShipmentReferenceNumber = "SomeReferenceNumber02",
         Sender = dummySender,
         Recipient = dummyRecipient,
         Product = Products.CL,
@@ -69,7 +69,7 @@ var labels = new List<Label>()
         {
             new ()
             {
-                CustomerReferenceNumber = "ParcelRefNr03",
+                ParcelSpecificReferenceNumber = "ParcelRefNr03",
                 Weight = 500
             }
         }

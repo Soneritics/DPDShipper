@@ -2,6 +2,6 @@
 
 public class Parcel
 {
-    public string CustomerReferenceNumber { get; set; }
+    public string ParcelSpecificReferenceNumber { get; set; }
     public int Weight { get; set; } = 0;
 }

@@ -2,7 +2,7 @@
 
 public class ShipmentResult
 {
-    public string DpdMpsId { get; set; }
+    public string Consignment { get; set; }
 
     public IEnumerable<string> LabelNumbers { get; set; }
 

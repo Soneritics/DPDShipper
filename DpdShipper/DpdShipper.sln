@@ -9,9 +9,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DpdShipper.Example", "DpdSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DpdShipper.Api.Domain", "DpdShipper.Api.Domain\DpdShipper.Api.Domain.csproj", "{FA2FA611-2B20-416C-9DF3-AB388C2B4476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DpdShipper.Api.Business", "DpdShipper.Api.Business\DpdShipper.Api.Business.csproj", "{DCAADDFB-861E-40E2-BE75-F9B8C0715154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DpdShipper.Api.Business", "DpdShipper.Api.Business\DpdShipper.Api.Business.csproj", "{DCAADDFB-861E-40E2-BE75-F9B8C0715154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DpdShipper.Api.Soap", "DpdShipper.Api.Soap\DpdShipper.Api.Soap.csproj", "{58139A74-675A-40B2-8E0E-0C9E443E57D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DpdShipper.Api.Soap", "DpdShipper.Api.Soap\DpdShipper.Api.Soap.csproj", "{58139A74-675A-40B2-8E0E-0C9E443E57D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{126D7A92-E747-4F99-9E77-6C7548D1EB04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{406DFDE9-B28F-4FBA-9930-7D8BF720117B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{8022D152-EDD6-4DC9-9195-26F8AD00B016}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{F1219A75-2F50-4715-8815-E66F16400929}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +55,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DF26D06-F0DC-4102-BD94-090930FEDE93} = {126D7A92-E747-4F99-9E77-6C7548D1EB04}
+		{A0310053-2708-42E2-A366-45079E6A15A6} = {F1219A75-2F50-4715-8815-E66F16400929}
+		{FA2FA611-2B20-416C-9DF3-AB388C2B4476} = {126D7A92-E747-4F99-9E77-6C7548D1EB04}
+		{DCAADDFB-861E-40E2-BE75-F9B8C0715154} = {126D7A92-E747-4F99-9E77-6C7548D1EB04}
+		{58139A74-675A-40B2-8E0E-0C9E443E57D1} = {126D7A92-E747-4F99-9E77-6C7548D1EB04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9D9E7FF-4517-4719-904C-B0E913E0F88B}
