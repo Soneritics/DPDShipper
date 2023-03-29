@@ -1,5 +1,4 @@
-﻿using System.IO;
-using DpdShipper.Api;
+﻿using DpdShipper.Api;
 using DpdShipper.Api.Domain.Shipment.Request;
 
 Console.WriteLine("DPD Shipper API LoginAsync Example\n-----\n");

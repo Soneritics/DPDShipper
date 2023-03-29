@@ -1,5 +1,6 @@
 ﻿using System.ServiceModel;
 using DpdShipper.Api.Business;
+using DpdShipper.Api.Domain.Exceptions;
 using DpdShipper.Api.Domain.Login;
 using DpdShipper.Api.Domain.Shipment.Request;
 using DpdShipper.Api.Domain.Shipment.Response;
@@ -72,8 +73,11 @@ public class ShipmentService : IShipmentService
         }
         catch (Exception ex)
         {
-            // Todo: map exception and get fault message
-            throw;
+            // Unfortunately the DPD webservice uses an old ASMX service, which
+            // sends an exception that does not exist anymore.
+            // Being unable to parse the SoapException's Detail property, it's
+            // impossible to determine the exact problem.
+            throw new LabelGeneratingFailedException(ex.Message, ex);
         }
     }
 }
