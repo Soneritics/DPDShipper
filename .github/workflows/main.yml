@@ -19,12 +19,11 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - name: Restore dependencies
-        run: nuget restore ./DpdShipper
+        run: nuget restore DpdShipper
           
       - name: Build solution and generate NuGet package
         run: |  
-          cd DpdShipper/DpdShipper.Api
-          dotnet pack -c Release -o out
+          dotnet pack DpdShipper/DpdShipper.Api -c Release -o out
 
       - name: Push generated package to GitHub registry
-        run: nuget push ./DpdShipper/DpdShipper.Api/out/*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_TOKEN}}
+        run: nuget push out/*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_TOKEN}}
