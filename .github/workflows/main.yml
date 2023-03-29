@@ -15,11 +15,11 @@ jobs:
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.1.1
 
-      - name: Restore dependencies
-        run: nuget restore ./DpdShipper/DpdShipper.sln
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
+
+      - name: Restore dependencies
+        run: nuget restore ./DpdShipper
           
       - name: Build solution and generate NuGet package
         run: |  
