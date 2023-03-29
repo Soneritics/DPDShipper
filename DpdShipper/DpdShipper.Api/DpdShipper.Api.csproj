@@ -4,13 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageId>DpdShipper</PackageId>
+	<Version>1.0.1</Version>
+	<Authors>Soneritics</Authors>
+	<Description></Description>
+	<IsPackable>true</IsPackable>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Endpoints\" />
-  </ItemGroup>
-
-  <ItemGroup>
+	<ItemGroup>
     <ProjectReference Include="..\DpdShipper.Api.Business\DpdShipper.Api.Business.csproj" />
     <ProjectReference Include="..\DpdShipper.Api.Domain\DpdShipper.Api.Domain.csproj" />
     <ProjectReference Include="..\DpdShipper.Api.Soap\DpdShipper.Api.Soap.csproj" />
