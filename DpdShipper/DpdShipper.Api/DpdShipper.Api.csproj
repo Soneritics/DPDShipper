@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>DpdShipper.Api</PackageId>
-	<Version>1.0.1</Version>
+	<Version>1.0.2</Version>
 	<Authors>Soneritics</Authors>
 	<Description></Description>
 	<IsPackable>true</IsPackable>
@@ -13,9 +13,11 @@
 </PropertyGroup>
 
 	<ItemGroup>
-    <ProjectReference Include="..\DpdShipper.Api.Business\DpdShipper.Api.Business.csproj" />
-    <ProjectReference Include="..\DpdShipper.Api.Domain\DpdShipper.Api.Domain.csproj" />
-    <ProjectReference Include="..\DpdShipper.Api.Soap\DpdShipper.Api.Soap.csproj" />
-  </ItemGroup>
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+	</ItemGroup>
 
 </Project>
