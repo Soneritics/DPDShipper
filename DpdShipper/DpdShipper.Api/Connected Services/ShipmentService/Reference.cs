@@ -20,10 +20,10 @@ namespace ShipmentService
         
         private string faultCodeField;
         
-        private string messageField;
+        private string faultstringField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string faultCode
         {
             get
@@ -37,16 +37,16 @@ namespace ShipmentService
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string message
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string faultstring
         {
             get
             {
-                return this.messageField;
+                return this.faultstringField;
             }
             set
             {
-                this.messageField = value;
+                this.faultstringField = value;
             }
         }
     }
@@ -4127,7 +4127,7 @@ namespace ShipmentService
         {
             if ((endpointConfiguration == EndpointConfiguration.ShipmentServiceSoap33Soap))
             {
-                return new System.ServiceModel.EndpointAddress("https://wsshipper.dpd.nl/soap/services/ShipmentService/V3_3/");
+                return new System.ServiceModel.EndpointAddress("https://wsshippertest.dpd.nl/PublicApi/services/ShipmentService/V3_3/");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

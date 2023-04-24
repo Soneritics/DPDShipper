@@ -33,7 +33,7 @@ public class ShipmentResultMapper : IMapper<storeOrdersResponse?, ShipmentResult
                         e => new ShipmentLabelError()
                         {
                             Code = e.faultCode,
-                            Message = e.message
+                            Message = e.faultstring
                         }) ?? new List<ShipmentLabelError>()
                     
                 });

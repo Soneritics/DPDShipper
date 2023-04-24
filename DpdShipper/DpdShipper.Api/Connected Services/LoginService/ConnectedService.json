@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://wsshipper.dpd.nl/soap/WSDL/LoginServiceV21.wsdl"
+      "https://shipperadmintest.dpd.nl/PublicAPI/WSDL/LoginServiceV21.wsdl"
     ],
     "collectionTypes": [
       "System.Array",

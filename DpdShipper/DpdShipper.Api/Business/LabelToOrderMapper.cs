@@ -48,7 +48,8 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
                 p => new parcels()
                 {
                     customerReferenceNumber1 = p.ParcelSpecificReferenceNumber,
-                    weight = p.Weight
+                    weight = p.Weight,
+                    weightSpecified = true
                 })
                 .ToArray();
 

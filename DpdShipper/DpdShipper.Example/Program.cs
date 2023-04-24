@@ -1,4 +1,7 @@
-﻿using DpdShipper.Api;
+﻿using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using DpdShipper.Api;
 using DpdShipper.Api.Domain.Shipment.Request;
 
 Console.WriteLine("DPD Shipper API LoginAsync Example\n-----\n");
@@ -48,7 +51,7 @@ var labels = new List<Label>()
             new ()
             {
                 ParcelSpecificReferenceNumber = "ParcelRefNr01",
-                Weight = 20000
+                Weight = 2000
             },
             new ()
             {
@@ -75,13 +78,10 @@ var labels = new List<Label>()
     },
 };
 
+var json = JsonSerializer.Serialize(labels);
 var shipmentResult = await shipperApi
     .ShipmentService(authToken)
     .GetPdfAsync(labels, PaperFormats.A6);
 
-await using (var fileStream = File.Create($"file-dpd-{DateTime.Now.ToFileTime()}.pdf")) {
-    await fileStream.WriteAsync(shipmentResult.ResultFile);
-}
-
-
-Console.ReadKey();
+await using var fileStream = File.Create($"file-dpd-{DateTime.Now.ToFileTime()}.pdf");
+await fileStream.WriteAsync(shipmentResult.ResultFile);

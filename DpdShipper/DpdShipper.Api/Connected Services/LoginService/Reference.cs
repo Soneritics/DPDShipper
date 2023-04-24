@@ -300,7 +300,7 @@ namespace LoginService
         {
             if ((endpointConfiguration == EndpointConfiguration.LoginServiceSoapSoap))
             {
-                return new System.ServiceModel.EndpointAddress("https://wsshipper.dpd.nl/soap/services/LoginService/V2_1");
+                return new System.ServiceModel.EndpointAddress("https://wsshippertest.dpd.nl/PublicApi/services/LoginService/V2_1");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
