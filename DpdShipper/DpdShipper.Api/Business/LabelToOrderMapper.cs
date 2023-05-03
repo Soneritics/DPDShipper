@@ -41,7 +41,9 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
 
             var productAndServiceData = new productAndServiceData()
             {
-                orderType = "consignment"
+                orderType = "consignment",
+                saturdayDelivery = label.SaturdayDelivery,
+                saturdayDeliverySpecified = true
             };
 
             var parcels = label.Parcels.Select(

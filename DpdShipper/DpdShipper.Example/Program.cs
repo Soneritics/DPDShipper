@@ -76,6 +76,23 @@ var labels = new List<Label>()
             }
         }
     },
+
+    new ()
+    {
+        SaturdayDelivery = true,
+        ShipmentReferenceNumber = "SaturdayDelivery01",
+        Sender = dummySender,
+        Recipient = dummyRecipient,
+        Product = Products.CL,
+        Parcels = new List<Parcel>()
+        {
+            new ()
+            {
+                ParcelSpecificReferenceNumber = "SaturdayDeliveryPrc",
+                Weight = 500
+            }
+        }
+    },
 };
 
 var json = JsonSerializer.Serialize(labels);
