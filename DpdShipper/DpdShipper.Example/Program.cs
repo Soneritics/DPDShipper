@@ -93,6 +93,32 @@ var labels = new List<Label>()
             }
         }
     },
+
+    new ()
+    {
+        ShipmentReferenceNumber = "SomeReferenceNumber03",
+        Sender = dummySender,
+        Recipient = new Recipient()
+        {
+            Name = "Het Torentje",
+            Street = "Binnenhof",
+            HouseNumber = "17",
+            Street2 = "Bovenste kamertje",
+            ZipCode = "2513 AA",
+            City = "Den Haag",
+            CountryCode = "NL",
+            RecipientType = RecipientTypes.Personal
+        },
+        Product = Products.CL,
+        Parcels = new List<Parcel>()
+        {
+            new ()
+            {
+                ParcelSpecificReferenceNumber = "ParcelRefNr04",
+                Weight = 256
+            }
+        }
+    },
 };
 
 var json = JsonSerializer.Serialize(labels);

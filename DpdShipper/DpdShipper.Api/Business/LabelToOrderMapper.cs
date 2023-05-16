@@ -31,6 +31,7 @@ public class LabelToOrderMapper : IMapper<IEnumerable<Label>, IEnumerable<order>
                     name2 = label.Recipient.Company ?? null,
                     street = label.Recipient.Street,
                     houseNo = label.Recipient.HouseNumber,
+                    street2 = label.Recipient.Street2 ?? null,
                     zipCode = label.Recipient.ZipCode,
                     city = label.Recipient.City,
                     country = label.Recipient.CountryCode,
