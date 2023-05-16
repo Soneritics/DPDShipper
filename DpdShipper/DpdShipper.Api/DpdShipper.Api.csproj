@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>DpdShipper.Api</PackageId>
-	<Version>1.4.0</Version>
+	<Version>1.4.1</Version>
 	<Authors>Soneritics</Authors>
 	<Description></Description>
 	<IsPackable>true</IsPackable>
